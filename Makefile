@@ -9,17 +9,18 @@ SRC_DIR		=	src/
 
 SRC		= $(SRC_DIR)strlen.s  \
 				$(SRC_DIR)strchr.s \
+				$(SRC_DIR)strcmp.s \
 
 OBJ		=	$(SRC:.s=.o)
 
-LDFLAGS		+=	-shared
+LDFLAGS		+=	-shared -fPIC
 
 NAME		=	libasm.so
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		ld -o $(NAME) -shared $(OBJ)
+		ld -o $(NAME) -shared  $(OBJ)
 
 %.o:	%.s
 		nasm -felf64 $< -o $@
