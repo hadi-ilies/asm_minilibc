@@ -1,8 +1,7 @@
   global        memcpy:function
                     ;;rdi -> first parameter | rsi -> second parameter when  equal to type *str | rdx | rcx
 memcpy:
-    xor rax, rax ;;init val return
-    mov rax,  rdi
+    mov rax, rdi
     cmp rdx, 0
     jz exit
     jmp loop_memcpy
