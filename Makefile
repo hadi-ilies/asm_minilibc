@@ -7,7 +7,8 @@
 
 SRC_DIR		=	src/
 
-SRC		=	$(SRC_DIR)strlen.s	\
+SRC		= $(SRC_DIR)strlen.s  \
+				$(SRC_DIR)strchr.s \
 
 OBJ		=	$(SRC:.s=.o)
 
