@@ -10,7 +10,8 @@ SRC_DIR		=	src/
 SRC		= $(SRC_DIR)strlen.s  \
 				$(SRC_DIR)strchr.s \
 				$(SRC_DIR)strcmp.s \
-
+				$(SRC_DIR)memset.s \
+				$(SRC_DIR)memcpy.s
 OBJ		=	$(SRC:.s=.o)
 
 LDFLAGS		+=	-shared -fPIC
