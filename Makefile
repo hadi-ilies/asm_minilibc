@@ -13,6 +13,7 @@ SRC		= $(SRC_DIR)strlen.s  \
 				$(SRC_DIR)strncmp.s \
 				$(SRC_DIR)memset.s \
 				$(SRC_DIR)memcpy.s \
+				$(SRC_DIR)strcasecmp.s \
 				$(SRC_DIR)rindex.s
 
 OBJ		=	$(SRC:.s=.o)
