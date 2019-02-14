@@ -7,7 +7,7 @@
 
 SRC_DIR		=	src/
 
-SRC		= 	$(SRC_DIR)strlen.s  \
+SRC		=	$(SRC_DIR)strlen.s  \
 			$(SRC_DIR)strchr.s \
 			$(SRC_DIR)strcmp.s \
 			$(SRC_DIR)strncmp.s \
@@ -39,7 +39,7 @@ clean:
 
 fclean:		clean
 		@$(RM) $(NAME)
-		
+
 re:		fclean all
 
 .PHONY: all clean fclean re
