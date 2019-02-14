@@ -1,5 +1,18 @@
-  global        memcpy:function
+  global        memmove:function
                     ;;rdi -> first parameter | rsi -> second parameter when  equal to type *str | rdx | rcx
+
+memmove:
+	cmp	rsi, rdi
+	jb	memcpy
+	mov rax, rdi
+	mov rcx, rdx
+	mov rdx, rsi
+	cld
+	rep movsb
+	mov rsi, rdx
+	mov rdi, rax
+    ret
+
 memcpy:
     mov rax, rdi
 
@@ -12,5 +25,6 @@ loop_memcpy:
     inc rdi
     inc rsi
     jmp loop_memcpy
+
 exit:
     ret
