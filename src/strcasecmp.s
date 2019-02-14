@@ -1,10 +1,11 @@
-  global        strcasecmp:function
-                    ;;rdi -> first parameter | rsi -> second parameter when  equal to type *str | rdx | rcx
+   global strcasecmp:function
+   section .text
+
 strcasecmp:
     xor rax, rax ;;
     xor r8, r8
     xor r9, r9
-
+    
 Loop:
    cmp BYTE[rdi], 0
    jz Diff

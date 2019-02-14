@@ -1,7 +1,6 @@
     global strlen:function
     section .text
 
-
 strlen:
     xor rax,  rax    ;; set counter to 0
     
