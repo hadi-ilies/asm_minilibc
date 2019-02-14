@@ -1,3 +1,8 @@
+#include <string.h>
+#include <stdio.h>
+char *chlak(char * s, char *accept);
+size_t chlak2(char *s, char *reject);
+
 int main(int argc, char **argv)
 {
 	if (argc == 2) {
@@ -12,5 +17,7 @@ int main(int argc, char **argv)
 		printf("rindex= %s\n", rindex("tessssssout", 's'));
 		printf("strncmp : %d\n", strncmp("hadi_bereksi", "hidi_", 6));
 		printf("strcasecmp: %d\n", strcasecmp("a", "A"));
+		printf("strpbrk: %s\n", chlak("bonjour", "jour"));
+		printf("strcspn: %d\n", chlak2("teso", "o"));
 	}
 }
