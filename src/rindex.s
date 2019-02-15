@@ -2,11 +2,11 @@
     section .text
 
 rindex:
-    xor rax, rax ;; set value to 0
+	xor rax, rax ;; set value to 0
 
 loop_rindex:
     cmp BYTE[rdi], sil
-    cmove rax, rsi
+    cmove rax, rdi
     cmp BYTE[rdi], 0
     jz Finished
     inc rdi
