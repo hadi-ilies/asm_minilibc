@@ -2,17 +2,18 @@
     section .text
 
 strchr:
-    xor rax, rax ;; set value to 0
+	xor rax, rax ;; set value to first rdi
+	cmp BYTE[rdi], 0
+	jz Error
 loop_strchr:
-    mov rax, rdi ;; assign value
-    cmp BYTE[rdi], 0
-    jz Error
-    cmp BYTE[rdi], sil ;; sil its the second parameter
-    jz Finished
-    inc rdi 
-    jmp loop_strchr
+	cmp BYTE[rdi], sil ;; sil its the second parameter
+	jz Finished
+	cmp BYTE[rdi], 0
+	jz Error
+	inc rdi
+	jmp loop_strchr
 Error:
-   xor rax, rax
-   ret
+	ret
 Finished:
-    ret
+	mov rax, rdi
+	ret
