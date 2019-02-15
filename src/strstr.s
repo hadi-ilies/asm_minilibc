@@ -1,6 +1,6 @@
-global chlak3:function
+global strstr:function
 
-chlak3:
+strstr:
     cmp BYTE[rdi], 0
     jz Finished
     cmp BYTE[rsi], 0

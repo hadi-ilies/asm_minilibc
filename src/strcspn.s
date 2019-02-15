@@ -1,7 +1,7 @@
-  global chlak2:function
+  global strcspn:function
   section .text
 
-chlak2:
+strcspn:
     xor rax, rax ;;
     xor r8, r8 ;;tmp letter
     xor r9, r9 ;;index
