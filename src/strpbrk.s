@@ -5,6 +5,8 @@ strpbrk:
     mov rax, rdi ;;
     xor r8, r8 ;;tmp letter
     xor r9, r9 ;;index
+    cmp BYTE[rdi], 0
+    jz Error
     jmp Loop
 
 Check_str:

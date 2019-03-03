@@ -29,7 +29,7 @@ NAME		=	libasm.so
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		ld -o $(NAME) $(LDFLAGS)  $(OBJ)
+		ld -o $(NAME) $(LDFLAGS) $(OBJ)
 
 %.o:	%.s
 		nasm -felf64 $< -o $@

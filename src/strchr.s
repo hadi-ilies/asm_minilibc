@@ -3,6 +3,8 @@
 
 strchr:
 	xor rax, rax ;; set value to first rdi
+	cmp rdi, 0
+	jz Error
 	cmp BYTE[rdi], 0
 	jz Error
 loop_strchr:
