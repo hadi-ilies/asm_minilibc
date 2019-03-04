@@ -11,15 +11,15 @@ zero:
     ret
 	
 incrementation:
-    cmp rdx, 0
-    jz diff
+    cmp BYTE[rdi], 0
+    jz diff	
     dec rdx
     inc rdi
     inc rsi
 
 loop_strncmp:
-    cmp BYTE[rdi], 0
-    jz diff
+    cmp rdx, 0
+    jz diff	
     mov al, BYTE[rdi]
     cmp al, BYTE[rsi] ;; comp two by
     jz incrementation

@@ -10,28 +10,24 @@ strcspn:
     jmp Loop
 
 Len:
-	cmp BYTE[rdi], 0
-	jz Exit
-	inc rax
-	inc rdi
-	jmp Len
+   cmp BYTE[rdi], 0
+   jz Exit
+   inc rax
+   inc rdi
+   jmp Len
 	
 Check_str:
-    cmp BYTE[rdi + r9], r8b
+    cmp BYTE[rsi + r9], r8b
     jz Exit
-    inc rax
     inc r9
-    cmp BYTE[rdi + r9], 0
+    cmp BYTE[rsi + r9], 0
     jnz Check_str
-    inc rsi
-    cmp BYTE[rsi], 0		;
-    jz Len			;
+    inc rdi
+    inc rax
     xor r9, r9
 
 Loop:
-   cmp BYTE[rdi], 0
-   jz Exit
-   mov r8b, BYTE[rsi]
+   mov r8b, BYTE[rdi]
    cmp r8b, 0 			;
    jz Exit			;
    jmp Check_str
