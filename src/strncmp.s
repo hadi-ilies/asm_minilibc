@@ -2,8 +2,14 @@
                     ;;rdi -> first parameter | rsi -> second parameter when  equal to type *str | rdx | rcx
 strncmp:
     xor rax, rax
+    cmp rdx, 0
+    jz zero
     jmp loop_strncmp
 
+zero:
+    xor rax, rax
+    ret
+	
 incrementation:
     cmp rdx, 0
     jz diff

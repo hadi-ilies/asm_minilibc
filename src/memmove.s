@@ -7,8 +7,8 @@ memmove:
 	mov rax, rdi
 	mov rcx, rdx
 	mov rdx, rsi
-	cld
-	rep movsb
+	cld 			;clear direction flag left to right
+	rep movsb		;rep movsp repete action in parameter
 	mov rsi, rdx
 	mov rdi, rax
     ret

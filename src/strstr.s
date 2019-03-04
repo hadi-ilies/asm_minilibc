@@ -3,9 +3,7 @@ global strstr:function
 strstr:
     cmp BYTE[rdi], 0
     jz Finished
-    cmp BYTE[rsi], 0
-    jz Finished
-
+	
     mov rax, rdi
     xor r9, r9 ;; index
     jmp Loop
@@ -24,6 +22,9 @@ Check:
     
 Loop:
     mov r8b, BYTE[rsi + r9]
+    cmp r8b, 0
+    jz FOUND
+    
     cmp BYTE[rax], r8b
     jnz Check
     cmp BYTE[rax], 0
