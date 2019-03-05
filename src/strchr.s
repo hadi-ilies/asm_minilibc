@@ -5,8 +5,7 @@ strchr:
 	xor rax, rax ;; set value to first rdi
 	cmp rdi, 0
 	jz Error
-	cmp BYTE[rdi], 0
-	jz Error
+
 loop_strchr:
 	cmp BYTE[rdi], sil ;; sil its the second parameter
 	jz Finished
