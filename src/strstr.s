@@ -2,12 +2,17 @@ global strstr:function
 
 strstr:
     cmp BYTE[rdi], 0
-    jz Finished
+    jz Error
 	
     mov rax, rdi
     xor r9, r9 ;; index
     jmp Loop
-
+Error:
+    cmp BYTE[rsi], 0
+    jnz Loop 
+    mov rax, rdi
+    ret
+	
 FOUND:
     sub rax, r9
     ret

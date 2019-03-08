@@ -16,11 +16,13 @@ incrementation:
     dec rdx
     inc rdi
     inc rsi
+    cmp BYTE[rsi], 0
+    jz test
 
 loop_strncmp:
     cmp rdx, 0
     jz diff	
-    mov al, BYTE[rdi]
+    mov al, BYTE[rdi]	
     cmp al, BYTE[rsi] ;; comp two by
     jz incrementation
 
@@ -31,3 +33,6 @@ diff:
     mov cl, BYTE[rsi] 
     sub eax, ecx  
     ret
+test:
+    xor rax, rax
+    ret			; return *s2 - *s1

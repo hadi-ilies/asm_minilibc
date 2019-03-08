@@ -3,7 +3,7 @@
 
 memmove:
 	cmp	rsi, rdi
-	jb	memcpy
+	jl	memcpy
 	mov rax, rdi
 	mov rcx, rdx
 	mov rdx, rsi
