@@ -1,9 +1,6 @@
 global strstr:function
 
-strstr:
-    cmp BYTE[rdi], 0
-    jz Error
-	
+strstr:	
     mov rax, rdi
     xor r9, r9 ;; index
     jmp Loop
